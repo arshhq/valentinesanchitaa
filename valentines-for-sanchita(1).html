@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Cutiepie ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose: #ff6b9d;
+            --deep-rose: #c9184a;
+            --blush: #ffb3c6;
+            --cream: #fff8f0;
+            --gold: #ffd700;
+            --midnight: #1a1a2e;
+            --star-glow: #ffe5b4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--midnight) 0%, #2d1b3d 50%, #1a1a2e 100%);
+            color: var(--cream);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.8)); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--blush);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--star-glow);
+            margin-top: 30px;
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.95) 0%, rgba(201, 24, 74, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.6);
+            z-index: 1000;
+            animation: slideInRight 1s ease-out, float 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .music-icon {
+            font-size: 1.8rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .music-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .music-artist {
+            font-size: 0.85rem;
+            color: var(--star-glow);
+            font-style: italic;
+        }
+
+        .music-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .music-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .music-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 179, 198, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--rose);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2) 0%, rgba(201, 24, 74, 0.2) 100%);
+            border: 2px solid var(--rose);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--blush);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* Stargazing Section */
+        .stargazing-guide {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(45, 27, 61, 0.8) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .stargazing-guide h3 {
+            color: var(--star-glow);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stargazing-guide p {
+            line-height: 1.8;
+            color: var(--cream);
+            margin-bottom: 15px;
+        }
+
+        .stellarium-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--deep-rose) 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .stellarium-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.6);
+        }
+
+        /* Question Game */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .activity-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 157, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .activity-card:hover::before {
+            left: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--rose);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(201, 24, 74, 0.1) 100%);
+        }
+
+        .activity-card.selected {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 107, 157, 0.2) 100%);
+            transform: scale(1.05);
+        }
+
+        .activity-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .activity-card:nth-child(2) .activity-icon { animation-delay: 0.5s; }
+        .activity-card:nth-child(3) .activity-icon { animation-delay: 1s; }
+        .activity-card:nth-child(4) .activity-icon { animation-delay: 1.5s; }
+        .activity-card:nth-child(5) .activity-icon { animation-delay: 2s; }
+        .activity-card:nth-child(6) .activity-icon { animation-delay: 2.5s; }
+
+        .activity-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--rose);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .activity-desc {
+            color: var(--blush);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .activity-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--deep-rose) 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .activity-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.5);
+        }
+
+        /* Love Reasons */
+        .love-reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .love-heart {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border: 2px solid var(--blush);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .love-heart:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: var(--rose);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .love-message {
+            color: var(--cream);
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            font-style: italic;
+        }
+
+        .love-heart.revealed .love-message {
+            opacity: 1;
+            max-height: 200px;
+        }
+
+        .love-heart.revealed .heart-icon {
+            transform: scale(1.3);
+            filter: drop-shadow(0 0 10px var(--rose));
+        }
+
+        .love-heart.revealed {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.25) 0%, rgba(255, 215, 0, 0.2) 100%);
+        }
+
+        /* Love Note */
+        .love-note {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border: 2px dashed var(--blush);
+            padding: 30px;
+            border-radius: 15px;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--blush);
+            margin: 30px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--blush);
+            font-size: 0.9rem;
+        }
+
+        .heart {
+            color: var(--rose);
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                padding: 12px 20px;
+                border-radius: 40px;
+            }
+
+            .music-info {
+                flex: 1;
+            }
+
+            .music-title {
+                font-size: 1rem;
+            }
+
+            .music-artist {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="hero">
+            <h1>Happy Valentine's Day</h1>
+            <p>Meri Cutiepie ke liye 💕</p>
+            <div class="subtitle">✨</div>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player">
+            <div class="music-icon" id="musicIcon">🎵</div>
+            <div class="music-info">
+                <div class="music-title">Tum Mile</div>
+                <div class="music-artist">Jab We Met • Hamara Song</div>
+            </div>
+            <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+                <span id="playPauseIcon">⏸️</span>
+            </button>
+        </div>
+
+        <audio id="backgroundMusic" loop muted>
+            <source src="Tum_Mile_Tum_Mile_Original_Motion_Picturetrack_320_Kbps.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Countdown Section -->
+        <div class="section">
+            <h2>Until We Meet Again 💑</h2>
+            <p style="text-align: center; color: var(--blush); margin-bottom: 20px;">
+                Counting down to March 6th when I finally get to see you!
+            </p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">--</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">--</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">--</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">--</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stargazing Section -->
+        <div class="section">
+            <h2>Let's Stargaze Together 🌟</h2>
+            <p style="text-align: center; color: var(--blush); margin-bottom: 20px;">
+                Even though we're miles apart, we're under the same sky. Let's look at the stars together on Valentine's night.
+            </p>
+            
+            <div class="stargazing-guide">
+                <h3>How we'll do it:</h3>
+                <p><strong>Step 1:</strong> Open Stellarium on your phone or computer (link below)</p>
+                <p><strong>Step 2:</strong> Set your location</p>
+                <p><strong>Step 3:</strong> Video call me and we'll explore the night sky together!</p>
+                <p><strong>Step 4:</strong> Look for these special constellations:</p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>💫 <strong>Gemini</strong> - The Twins (us, always together in spirit)</li>
+                    <li>💕 <strong>Cygnus</strong> - The Swan (eternal love)</li>
+                    <li>✨ <strong>Cassiopeia</strong> - The Queen (because you're my queen)</li>
+                    <li>🌙 <strong>Orion</strong> - The Hunter (I'll always find my way back to you)</li>
+                </ul>
+                <p style="margin-top: 20px;">
+                    Fun fact: Light from stars takes years to reach us, just like our love transcends any distance. 
+                    When we look at the same stars, we're literally sharing the same light. ✨
+                </p>
+                
+                <div style="text-align: center;">
+                    <a href="https://stellarium-web.org/" target="_blank" class="stellarium-link">
+                        🌌 Open Stellarium
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Virtual Date Night Section -->
+        <div class="section">
+            <h2>Our Virtual Date Activities 💑</h2>
+            <p style="text-align: center; color: var(--blush); margin-bottom: 30px;">
+                Pick an activity and let's make tonight special!
+            </p>
+
+            <div class="activity-grid">
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">🎬</div>
+                    <div class="activity-title">Movie Night</div>
+                    <div class="activity-desc">Watch a romantic movie together using Teleparty</div>
+                    <a href="https://www.teleparty.com/" target="_blank" class="activity-link">Setup Teleparty</a>
+                </div>
+
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">🎮</div>
+                    <div class="activity-title">Play Games</div>
+                    <div class="activity-desc">Fun online games like Skribbl.io or 20 Questions</div>
+                    <a href="https://skribbl.io/" target="_blank" class="activity-link">Play Skribbl</a>
+                </div>
+
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">🍝</div>
+                    <div class="activity-title">Cook Together</div>
+                    <div class="activity-desc">Make the same recipe together on video call</div>
+                    <div class="activity-link" style="cursor: default; opacity: 0.7;">Choose a recipe!</div>
+                </div>
+
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">🎵</div>
+                    <div class="activity-title">Music Session</div>
+                    <div class="activity-desc">Share songs and create a playlist together</div>
+                    <a href="https://www.spotify.com/" target="_blank" class="activity-link">Open Spotify</a>
+                </div>
+
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">💭</div>
+                    <div class="activity-title">Dream Date</div>
+                    <div class="activity-desc">Plan our perfect date for when we meet on March 6th</div>
+                    <div class="activity-link" style="cursor: default; opacity: 0.7;">Let's dream!</div>
+                </div>
+
+                <div class="activity-card" onclick="selectActivity(this)">
+                    <div class="activity-icon">📸</div>
+                    <div class="activity-title">Memory Lane</div>
+                    <div class="activity-desc">Look through our photos and reminisce</div>
+                    <div class="activity-link" style="cursor: default; opacity: 0.7;">Our moments ❤️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Love Messages Section -->
+        <div class="section">
+            <h2>Why I Love You 💝</h2>
+            <p style="text-align: center; color: var(--blush); margin-bottom: 30px;">
+                Click each heart to see why you mean everything to me
+            </p>
+
+            <div class="love-reasons">
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💖</div>
+                    <div class="love-message">Tumhari smile meri sabse dark days ko bhi light up kar deti hai, even through a screen</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💕</div>
+                    <div class="love-message">Tum mujhe bina kuch bole samajh jaati ho, and that feeling is everything</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💗</div>
+                    <div class="love-message">Tumse baat karna feels like coming home, har baar</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💓</div>
+                    <div class="love-message">Tumhari laugh is my favorite sound in the whole world</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💞</div>
+                    <div class="love-message">Jab main khud pe believe nahi karta, tum mujhpe believe karti ho</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💘</div>
+                    <div class="love-message">Tumhare saath har moment feels like a gift jo main kabhi khatam nahi karna chahta</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">💝</div>
+                    <div class="love-message">Tum sirf meri girlfriend nahi ho, you're my best friend and my everything</div>
+                </div>
+
+                <div class="love-heart" onclick="revealLove(this)">
+                    <div class="heart-icon">❣️</div>
+                    <div class="love-message">This distance has only proved how real aur strong our love is</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Love Note Section -->
+        <div class="section">
+            <div class="love-note">
+                "Distance itni matter nahi karti when someone means this much. 
+                <br><br>
+                Tum meri favorite notification ho, my best distraction, meri cutiepie, and the reason I believe in us.
+                <br><br>
+                March 6th tak har din count kar raha hoon. But every day with you in my life, even from afar, is a gift.
+                <br><br>
+                Happy Valentine's Day, my love.
+                <br><br>
+                Forever yours,
+                <br>
+                Arsh 💕"
+            </div>
+        </div>
+
+        <div class="footer">
+            Made with <span class="heart">❤️</span> for my Cutiepie
+            <br>
+            <small style="margin-top: 10px; display: block; opacity: 0.7;">
+                Valentine's Day 2026 • Arsh & Sanchita
+            </small>
+        </div>
+    </div>
+
+    <script>
+        // Create animated stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const meetingDate = new Date('2026-03-06T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = meetingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; font-size: 2rem; color: var(--gold);">
+                        We're together! 🎉💕
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        createStars();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Music player functionality
+        const music = document.getElementById('backgroundMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        let isPlaying = false;
+        let hasStarted = false;
+
+        // Start music muted, then unmute on first interaction
+        window.addEventListener('load', function() {
+            music.play();
+            playPauseIcon.textContent = '▶️';
+            
+            // On ANY user interaction, unmute and start
+            const startMusic = () => {
+                if (!hasStarted) {
+                    music.muted = false;
+                    music.currentTime = 0;
+                    music.play();
+                    isPlaying = true;
+                    hasStarted = true;
+                    playPauseIcon.textContent = '⏸️';
+                    musicIcon.style.animation = 'pulse 2s ease-in-out infinite';
+                }
+            };
+            
+            // Listen for any interaction
+            ['click', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+                document.addEventListener(event, startMusic, { once: true });
+            });
+        });
+
+        function toggleMusic() {
+            if (!hasStarted) {
+                // First click starts the music
+                music.muted = false;
+                music.play();
+                isPlaying = true;
+                hasStarted = true;
+                playPauseIcon.textContent = '⏸️';
+                musicIcon.style.animation = 'pulse 2s ease-in-out infinite';
+            } else {
+                // Regular pause/play
+                if (isPlaying) {
+                    music.pause();
+                    playPauseIcon.textContent = '▶️';
+                    musicIcon.style.animation = 'none';
+                } else {
+                    music.play();
+                    playPauseIcon.textContent = '⏸️';
+                    musicIcon.style.animation = 'pulse 2s ease-in-out infinite';
+                }
+                isPlaying = !isPlaying;
+            }
+        }
+
+        // Activity selection
+        function selectActivity(card) {
+            document.querySelectorAll('.activity-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+        }
+
+        // Reveal love messages
+        function revealLove(heart) {
+            heart.classList.toggle('revealed');
+        }
+    </script>
+</body>
+</html>
